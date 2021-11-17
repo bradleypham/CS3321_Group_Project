@@ -11,9 +11,9 @@
 #include "Manage_Disciplinary.h"
 #include <iostream>
 
-//REMEMBER TO CREAT SOME PERMISSION CONTROL SYSTEM IN ANOTHER CLASS AND UTILIZE IT IN THIS ONE
+//REMEMBER TO CREATE SOME PERMISSION CONTROL SYSTEM IN ANOTHER CLASS AND UTILIZE IT IN THIS ONE
 
-void User_Interface::clearScreen()
+static void User_Interface::clearScreen()
 //clears the screen
 {
     for (int i = 0; i < 40; i++)
@@ -22,7 +22,7 @@ void User_Interface::clearScreen()
     }
 }
 
-void User_Interface::displayLogin()
+static void User_Interface::displayLogin()
 //starts the login
 {
  Validate_Login validate; //object of the Validate Login class to access the ValidateLogin() function
@@ -30,7 +30,7 @@ void User_Interface::displayLogin()
  displayMainMenu();
 }
 
-void User_Interface::displayEmployeeMenu()
+static void User_Interface::displayEmployeeMenu()
 //starts the employee menu
 {
 Manage_Profile manageProfile; //object to access functions of the Manage Profile Class
@@ -73,7 +73,7 @@ while (!menuControl)
 }
 }
 
-void User_Interface::displayMainMenu()
+static void User_Interface::displayMainMenu()
 //starts the main menu
 {
 bool menuControl = false; //controls while loop
@@ -123,7 +123,7 @@ while (!menuControl)
 }
 }
 
-void User_Interface::displayNewsMenu()
+static void User_Interface::displayNewsMenu()
 //starts the news menu
 {
 Report_Company_News reportCompanyNews; //object to access functions of the Report Company News Class
@@ -171,7 +171,7 @@ while (!menuControl)
 }
 }
 
-void User_Interface::displaySalaryBenefitsMenu()
+static void User_Interface::displaySalaryBenefitsMenu()
 //starts the salary benefits menu
 {
 Manage_Salary_Benefits manageSalaryBenefits; //object to access functions of the Manage Salary Benefits Class
@@ -214,7 +214,7 @@ while (!menuControl)
 }
 }
 
-void User_Interface::displaySchedulingMenu()
+static void User_Interface::displaySchedulingMenu()
 //starts the scheduling menu
 {
 Manage_PTO managePTO; //object to access functions of the Manage PTO Class
@@ -265,7 +265,7 @@ while (!menuControl)
 }
 }
 
-void User_Interface::display_HR_Menu()
+static void User_Interface::display_HR_Menu()
 //starts the HR menu
 {
 Manage_Disciplinary complaints; //object to access functions of the Manage Disciplinary Class
