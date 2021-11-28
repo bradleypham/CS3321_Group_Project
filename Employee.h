@@ -6,13 +6,13 @@ class Employee {
 
 private:
 
-	//employe id 
+	//employee id
 	int Employee_ID;
 	//employee position in the company
 	String Position;
 	//employee hired date in the company
 	String Hired_Date;
-	//employe emal
+	//employee email
 	String emp_email;
 	//employee phone
 	int emp_phone;
@@ -20,7 +20,8 @@ private:
 	String emp_username;
 	//employee password for login
 	String emp_password;
-	
+    //employee shifts (needed to fulfill functional requirements)
+    string emp_shifts;
 
 public:
 
@@ -60,6 +61,11 @@ public:
 		return emp_password;
 	}
 
+	string getEmp_Shifts()
+    {
+        return emp_shifts;
+    }
+
 	//set employee identification number
 	void setEmployee_ID(int id) {
 		Employee_ID = id;
@@ -95,7 +101,10 @@ public:
 		emp_password = ps;
 	}
 
-
+    void setEmp_Shifts(string s)
+    {
+        emp_shifts = s;
+    }
 
 };
 

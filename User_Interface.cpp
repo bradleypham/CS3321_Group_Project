@@ -12,6 +12,9 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <fstream>
+
+#pragma once
 
 static void User_Interface::clearScreen()
 //clears the screen
