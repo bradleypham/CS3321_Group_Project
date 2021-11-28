@@ -10,8 +10,8 @@
 #include "Report_Schedule.h"
 #include "Manage_Disciplinary.h"
 #include <iostream>
-
-//REMEMBER TO CREATE SOME PERMISSION CONTROL SYSTEM IN ANOTHER CLASS AND UTILIZE IT IN THIS ONE
+#include <string>
+#include <cstdlib>
 
 static void User_Interface::clearScreen()
 //clears the screen
@@ -20,6 +20,25 @@ static void User_Interface::clearScreen()
     {
         cout << endl;
     }
+}
+
+//this validates the admin password and effectively adds a permission system
+static bool User_Interface::adminPasswordValidation()
+{
+    string adminPassword = "admin";
+    string passwordAttempt;
+    cout << "Enter admin password:" << endl;
+            cin >> passwordAttempt;
+            if (passwordAttempt != adminPassword)
+            {
+                cout << "Access denied" << endl;
+                system("pause");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
 }
 
 static void User_Interface::displayLogin()
@@ -43,8 +62,9 @@ while (!menuControl)
     cout << "Employee Menu: " << endl << endl;
     cout << "1. Add Employee Profile" << endl;
     cout << "2. Delete Employee Profile" << endl;
-    cout << "3. Change Password" << endl;
-    cout << "4. Exit to Main Menu" << endl;
+    cout << "3. Edit Employee Profile" << endl; //added this because it's in our functional requirements
+    cout << "4. Change Password" << endl;
+    cout << "5. Exit to Main Menu" << endl;
 
     cout << "Enter your choice and press Enter or Return: ";
 
@@ -54,15 +74,22 @@ while (!menuControl)
     {
 
         case 1:
+            clearScreen();
             manageProfile.addProfile();
             break;
         case 2:
+            clearScreen();
             manageProfile.deleteProfile();
             break;
         case 3:
-            manageProfile.manageLogin();
+            clearScreen();
+            manageProfile.editProfile();
             break;
         case 4:
+            clearScreen();
+            manageProfile.manageLogin();
+            break;
+        case 5:
             menuControl = true;
             break;
         default:
@@ -98,6 +125,10 @@ while (!menuControl)
     {
 
         case 1:
+            if (!adminPasswordValidation())
+            {
+                break;
+            }
             displaySalaryBenefitsMenu();
             break;
         case 2:
@@ -110,6 +141,10 @@ while (!menuControl)
             display_HR_Menu();
             break;
         case 5:
+            if (!adminPasswordValidation())
+            {
+                break;
+            }
             displayEmployeeMenu();
             break;
         case 6:
@@ -149,12 +184,24 @@ while (!menuControl)
     {
 
         case 1:
+            if (!adminPasswordValidation())
+            {
+                break;
+            }
             manageCompanyNews.addNews();
             break;
         case 2:
+            if (!adminPasswordValidation())
+            {
+                break;
+            }
             manageCompanyNews.editNews();
             break;
         case 3:
+            if (!adminPasswordValidation())
+            {
+                break;
+            }
             manageCompanyNews.displayNewsForDeletion();
             break;
         case 4:
@@ -245,12 +292,20 @@ while (!menuControl)
             reportSchedule.ReportWeekSchedule();
             break;
         case 2:
+            if (!adminPasswordValidation())
+            {
+                break;
+            }
             scheduling.ManageSchedule();
             break;
         case 3:
             managePTO.employeePTORequest();
             break;
         case 4:
+            if (!adminPasswordValidation())
+            {
+                break;
+            }
             reportPTO.ReportPTO();
             managePTO.ManagePTORequest();
             break;

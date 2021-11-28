@@ -6,6 +6,7 @@ class User_Interface
 {
     public:
         static void clearScreen();
+        static bool adminPasswordValidation();
         static void displayLogin();
         static void displayMainMenu();
         static void display_HR_Menu();
