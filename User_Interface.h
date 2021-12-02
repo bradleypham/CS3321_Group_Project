@@ -5,15 +5,15 @@
 class User_Interface
 {
     public:
-        static void clearScreen();
-        static bool adminPasswordValidation();
-        static void displayLogin();
-        static void displayMainMenu();
-        static void display_HR_Menu();
-        static void displayNewsMenu();
-        static void displaySchedulingMenu();
-        static void displayEmployeeMenu();
-        static void displaySalaryBenefitsMenu();
+        void clearScreen();
+        bool adminPasswordValidation();
+        void displayLogin();
+        void displayMainMenu();
+        void display_HR_Menu();
+        void displayNewsMenu();
+        void displaySchedulingMenu();
+        void displayEmployeeMenu();
+        void displaySalaryBenefitsMenu();
 
 };
 

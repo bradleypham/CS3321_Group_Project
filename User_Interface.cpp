@@ -1,14 +1,15 @@
 #include "User_Interface.h"
-#include "Validate_Login.h"
+//#include "Validate_Login.h"
 #include "Manage_Profile.h"
-#include "Manage_Company_News.h"
-#include "Report_Company_News.h"
-#include "Manage_Salary_Benefits.h"
-#include "Manage_PTO.h"
-#include "Report_PTO.h"
-#include "Scheduling.h"
-#include "Report_Schedule.h"
-#include "Manage_Disciplinary.h"
+#include "Manage_Profile.cpp"
+//#include "Manage_Company_News.h"
+//#include "Report_Company_News.h"
+//#include "Manage_Salary_Benefits.h"
+//#include "Manage_PTO.h"
+//#include "Report_PTO.h"
+//#include "Scheduling.h"
+//#include "Report_Schedule.h"
+//#include "Manage_Disciplinary.h"
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -16,7 +17,7 @@
 
 #pragma once
 
-static void User_Interface::clearScreen()
+void User_Interface::clearScreen()
 //clears the screen
 {
     for (int i = 0; i < 40; i++)
@@ -26,7 +27,7 @@ static void User_Interface::clearScreen()
 }
 
 //this validates the admin password and effectively adds a permission system
-static bool User_Interface::adminPasswordValidation()
+bool User_Interface::adminPasswordValidation()
 {
     string adminPassword = "admin";
     string passwordAttempt;
@@ -44,15 +45,15 @@ static bool User_Interface::adminPasswordValidation()
             }
 }
 
-static void User_Interface::displayLogin()
+/*void User_Interface::displayLogin()
 //starts the login
 {
  Validate_Login validate; //object of the Validate Login class to access the ValidateLogin() function
  validate.ValidateLogin();
  displayMainMenu();
 }
-
-static void User_Interface::displayEmployeeMenu()
+*/
+void User_Interface::displayEmployeeMenu()
 //starts the employee menu
 {
 Manage_Profile manageProfile; //object to access functions of the Manage Profile Class
@@ -66,7 +67,7 @@ while (!menuControl)
     cout << "1. Add Employee Profile" << endl;
     cout << "2. Delete Employee Profile" << endl;
     cout << "3. Edit Employee Profile" << endl; //added this because it's in our functional requirements
-    cout << "4. Change Password" << endl;
+    cout << "4. View Employee Profiles" << endl;
     cout << "5. Exit to Main Menu" << endl;
 
     cout << "Enter your choice and press Enter or Return: ";
@@ -86,11 +87,12 @@ while (!menuControl)
             break;
         case 3:
             clearScreen();
-            manageProfile.editProfile();
+            manageProfile.deleteProfile();
+            manageProfile.addProfile();
             break;
         case 4:
             clearScreen();
-            manageProfile.manageLogin();
+            manageProfile.viewProfiles();
             break;
         case 5:
             menuControl = true;
@@ -103,7 +105,7 @@ while (!menuControl)
 }
 }
 
-static void User_Interface::displayMainMenu()
+void User_Interface::displayMainMenu()
 //starts the main menu
 {
 bool menuControl = false; //controls while loop
@@ -152,7 +154,7 @@ while (!menuControl)
             break;
         case 6:
             cout << "Goodbye";
-            return 0;
+            std::exit(0);
         default:
             cout << "Invalid choice" << endl;
             system("pause"); //waits for user input before continuing
@@ -161,9 +163,10 @@ while (!menuControl)
 }
 }
 
-static void User_Interface::displayNewsMenu()
+void User_Interface::displayNewsMenu()
 //starts the news menu
 {
+    /*
 Report_Company_News reportCompanyNews; //object to access functions of the Report Company News Class
 Manage_Company_News manageCompanyNews; //object to access functions of the Manage Company News Class
 bool menuControl = false; //controls while loop
@@ -219,11 +222,12 @@ while (!menuControl)
             break;
     }
 }
+*/
 }
-
-static void User_Interface::displaySalaryBenefitsMenu()
+void User_Interface::displaySalaryBenefitsMenu()
 //starts the salary benefits menu
 {
+    /*
 Manage_Salary_Benefits manageSalaryBenefits; //object to access functions of the Manage Salary Benefits Class
 bool menuControl = false; //controls while loop
 int userChoice = 0; //userChoice is set to 0 since there is no option 0
@@ -262,11 +266,14 @@ while (!menuControl)
             break;
     }
 }
+*/
 }
 
-static void User_Interface::displaySchedulingMenu()
+void User_Interface::displaySchedulingMenu()
+
 //starts the scheduling menu
 {
+    /*
 Manage_PTO managePTO; //object to access functions of the Manage PTO Class
 Report_PTO reportPTO; //object to access functions of the Report PTO Class
 Scheduling scheduling; //object to access functions of the Scheduling Class
@@ -321,11 +328,14 @@ while (!menuControl)
             break;
     }
 }
+*/
 }
 
-static void User_Interface::display_HR_Menu()
+void User_Interface::display_HR_Menu()
+
 //starts the HR menu
 {
+    /*
 Manage_Disciplinary complaints; //object to access functions of the Manage Disciplinary Class
 bool menuControl = false; //controls while loop
 int userChoice = 0; //userChoice is set to 0 since there is no option 0
@@ -356,4 +366,5 @@ while (!menuControl)
             break;
     }
 }
+*/
 }
