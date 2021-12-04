@@ -45,8 +45,7 @@ void Manage_Profile::addProfile()
     cout << endl;
 
     cout << "Enter the employee's phone number: ";
-    cin >> emp.empPhone;
-    cin.ignore();
+    getline(cin, emp.empPhone);
     employee.setEmp_phone(emp.empPhone);
     cout << endl;
 
