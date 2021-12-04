@@ -58,7 +58,7 @@ void User_Interface::displayEmployeeMenu()
 {
 Manage_Profile manageProfile; //object to access functions of the Manage Profile Class
 bool menuControl = false; //controls while loop
-int userChoice = 0; //userChoice is set to 0 since there is no option 0
+int userChoice; //userChoice is set to 0 since there is no option 0
 
 while (!menuControl)
 {
@@ -99,6 +99,8 @@ while (!menuControl)
             break;
         default:
             cout << "Invalid choice" << endl;
+            cin.clear();
+            cin.ignore();
             system("pause"); //waits for user input before continuing
             break;
     }
@@ -109,7 +111,7 @@ void User_Interface::displayMainMenu()
 //starts the main menu
 {
 bool menuControl = false; //controls while loop
-int userChoice = 0; //userChoice is set to 0 since there is no option 0
+int userChoice; //userChoice is set to 0 since there is no option 0
 
 while (!menuControl)
 {
@@ -125,6 +127,7 @@ while (!menuControl)
     cout << "Enter your choice and press Enter or Return: ";
 
     cin >> userChoice;
+
 
     switch (userChoice)
     {
@@ -154,9 +157,11 @@ while (!menuControl)
             break;
         case 6:
             cout << "Goodbye";
-            std::exit(0);
+            exit(0);
         default:
             cout << "Invalid choice" << endl;
+            cin.clear();
+            cin.ignore();
             system("pause"); //waits for user input before continuing
             break;
     }
@@ -170,7 +175,7 @@ void User_Interface::displayNewsMenu()
 Report_Company_News reportCompanyNews; //object to access functions of the Report Company News Class
 Manage_Company_News manageCompanyNews; //object to access functions of the Manage Company News Class
 bool menuControl = false; //controls while loop
-int userChoice = 0; //userChoice is set to 0 since there is no option 0
+int userChoice; //userChoice is set to 0 since there is no option 0
 
 while (!menuControl)
 {
@@ -218,6 +223,8 @@ while (!menuControl)
             break;
         default:
             cout << "Invalid choice" << endl;
+            cin.clear();
+            cin.ignore();
             system("pause"); //waits for user input before continuing
             break;
     }
@@ -230,7 +237,7 @@ void User_Interface::displaySalaryBenefitsMenu()
     /*
 Manage_Salary_Benefits manageSalaryBenefits; //object to access functions of the Manage Salary Benefits Class
 bool menuControl = false; //controls while loop
-int userChoice = 0; //userChoice is set to 0 since there is no option 0
+int userChoice; //userChoice is set to 0 since there is no option 0
 
 while (!menuControl)
 {
@@ -262,6 +269,8 @@ while (!menuControl)
             break;
         default:
             cout << "Invalid choice" << endl;
+            cin.clear();
+            cin.ignore();
             system("pause"); //waits for user input before continuing
             break;
     }
@@ -279,7 +288,7 @@ Report_PTO reportPTO; //object to access functions of the Report PTO Class
 Scheduling scheduling; //object to access functions of the Scheduling Class
 Report_Schedule reportSchedule; //object to access functions of the Report Schedule Class
 bool menuControl = false; //controls while loop
-int userChoice = 0; //userChoice is set to 0 since there is no option 0
+int userChoice; //userChoice is set to 0 since there is no option 0
 
 while (!menuControl)
 {
@@ -324,6 +333,8 @@ while (!menuControl)
             break;
         default:
             cout << "Invalid choice" << endl;
+            cin.clear();
+            cin.ignore();
             system("pause"); //waits for user input before continuing
             break;
     }
@@ -338,7 +349,7 @@ void User_Interface::display_HR_Menu()
     /*
 Manage_Disciplinary complaints; //object to access functions of the Manage Disciplinary Class
 bool menuControl = false; //controls while loop
-int userChoice = 0; //userChoice is set to 0 since there is no option 0
+int userChoice; //userChoice is set to 0 since there is no option 0
 
 while (!menuControl)
 {
@@ -362,6 +373,8 @@ while (!menuControl)
             break;
         default:
             cout << "Invalid choice" << endl;
+            cin.clear();
+            cin.ignore();
             system("pause"); //waits for user input before continuing
             break;
     }

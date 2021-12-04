@@ -34,7 +34,7 @@ void Manage_Profile::addProfile()
     employee.setPosition(emp.empPosition);
     cout << endl;
 
-    cout << "Enter the employee's date of hire: ";
+    cout << "Enter the employee's date of hire : ";
     getline(cin, emp.empHiredDate);
     employee.setHired_Date(emp.empHiredDate);
     cout << endl;
@@ -46,11 +46,11 @@ void Manage_Profile::addProfile()
 
     cout << "Enter the employee's phone number: ";
     cin >> emp.empPhone;
+    cin.ignore();
     employee.setEmp_phone(emp.empPhone);
     cout << endl;
 
     cout << "Enter the employee's username: ";
-    cin.ignore();
     getline(cin, emp.empUsername);
     employee.setEmp_username(emp.empUsername);
     cout << endl;
