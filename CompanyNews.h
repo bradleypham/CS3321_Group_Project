@@ -9,11 +9,11 @@ class CompanyNews {
 private:
 
 	//company news can only contain 7 file for 7 days of the week
-	String NewsFileName[7];
+	string NewsFileName[7];
 
 public:
 	//set single file name
-	void setFileName(String name) {
+	void setFileName(string name) {
 		int count = 0;
 
 		for (int i = 0; i < 5; i++, count++) {
@@ -28,20 +28,20 @@ public:
 	}
 
 	//set news filenames
-	void setNewsFileName(String[] names) {
+	void setNewsFileName(string[] names) {
 		for (int i = 0; i < names.length(); i++) {
 			NewsFileName[i] = names[i];
 		}
 	}
 
 	//get new files 
-	String* getNewsFileName() {
+	string* getNewsFileName() {
 		return NewsFileName;
 	}
 
 	void writeFile() {
 
-		String UserInput;
+		string UserInput;
 		ofstream wFile;
 
 		//create a file name
@@ -58,9 +58,9 @@ public:
 	}
 
 	void readNewsFile() {
-		boolean found = false;
+		bool found = false;
 		ifstream rfile;
-		String userInput;
+		string userInput;
 		cout << "Enter a file name to read";
 		cin >> userInput;
 
@@ -72,7 +72,7 @@ public:
 		}
 
 		if (found) {
-			String x;
+			string x;
 			rfile.open(fname);
 			while (rfile >> x) {
 				cout << x << " ";
