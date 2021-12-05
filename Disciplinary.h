@@ -3,20 +3,20 @@
 #include <string>
 #include <iostream>
 #include <fstream>
-
+using namespace std;
 
 class Disciplinary {
 private:
 	//Disciplinary id number case
 	int complaint_id;
 	//hr meeting date
-	String MeetingDate;
+	string MeetingDate;
 	//document file name
-	String DocumentName[5];
+	string DocumentName[5];
 	//Hr representative
-	String Hr_Rep;
+	string Hr_Rep;
 
-	
+
 
 
 public:
@@ -28,7 +28,7 @@ public:
 		Hr_Rep = " ";
 	}
 
-	Disciplinary(int id, String date, String[] names, String hr) {
+	Disciplinary(int id, string date, string[] names, String hr) {
 		complaint_id = id;
 		MeetingDate = date;
 		for (int i = 0; i < names.length(); i++) {
@@ -46,17 +46,17 @@ public:
 	}
 
 	//return meeting date 
-	String getMeetingDate() {
+	string getMeetingDate() {
 		return MeetingDate;
 	}
 
 	//return employee File Names
 
-	String * getDocumentNames() {
+	string * getDocumentNames() {
 		return DocumentName;
 	}
 	// return hr representative name
-	String getHrRep() {
+	string getHrRep() {
 		return Hr_Rep;
 	}
 
@@ -66,11 +66,11 @@ public:
 		complaint_id = id;
 	}
 	//set meeting date
-	void setMeetingDate(Strng m) {
+	void setMeetingDate(string m) {
 		MeetingDate = m;
 	}
 	//set documents names
-	void setDocumentName(String n) {
+	void setDocumentName(string n) {
 
 		for (int i = 0; i < 5; i++) {
 
@@ -81,31 +81,31 @@ public:
 		}
 	}
 
-	void setHrRep(String hr) {
+	void setHrRep(string hr) {
 		Hr_Rep = hr;
 	}
 
 	void writeFile() {
-			String UserInput;
-			ofstream wFile;
+		string UserInput;
+		ofstream wFile;
 
-			//create a file name
-			cout << "Create a File Name: ";
-			cin >> UserInput;
+		//create a file name
+		cout << "Create a File Name: ";
+		cin >> UserInput;
 
-			wFile.open(UserInput);
+		wFile.open(UserInput);
 
-			cout << "Write Your complant Here: ";
-			cin >> UserInput;
-			wFile << UserInput;
-			wFile.close();
+		cout << "Write Your complant Here: ";
+		cin >> UserInput;
+		wFile << UserInput;
+		wFile.close();
 
-		}
+	}
 
-	void readFile(String fname) {
-		boolean found = false;
+	void readFile(string fname) {
+		bool found = false;
 		ifstream rfile;
-		String userInput;
+		string userInput;
 		cout << "Enter a file name to read";
 		cin >> userInput;
 
@@ -117,7 +117,7 @@ public:
 		}
 
 		if (found) {
-			String x;
+			string x;
 			rfile.open(fname);
 			while (rfile >> x) {
 				cout << x << " ";
@@ -128,7 +128,6 @@ public:
 			cout << "No file found.";
 		}
 	}
-
 
 
 };
